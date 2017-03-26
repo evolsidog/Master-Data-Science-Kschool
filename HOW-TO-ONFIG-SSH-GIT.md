@@ -57,6 +57,7 @@ Podemos ver como ahora tenermos dos archivos nuevos creados. **github.pub** es n
 A continuación copiamos nuestra clave pública para introducirla en nuestra cuenta de github:
 
 **cat github.pub**
+
 ssh-rsa AAAAB3Nza2EAAAADAQABAAABAQDbSjrdVdjkfzZM2yfdOI2sOW9fXF5qKPZFGJl21FRbOcFmw+HZ5sa7rJknmDsGQBL+AHnc/kBJIfDD3eN1YY2tFZFu2tin6f2PrY7wovxAKC3nZQaX28v4YPR4OMENBL37wowsvH+XvEQVJYogHoq9O8OAus6rnFJeolWd/0rka8XOHv7KMX+i4k985n40iz60ivoznWIRrJbTySspIyo3qYubEGItJ+4uulZiKH79DNZfquqpF/CFQ4EDBIXXpUOZ4nZJlNaWOWy4djE0chk8VVg7QAknvc/ajQnJOIx2M34zR+0TawTDl/J+0r4IMLykTqwBk6KhzYyPFo/Y5QuX tuemail@domain.com
 
 Ingresamos en nuestra cuenta de github y en *settings* accedemos al apartado situado en el lado izquierdo de la pantalla llamado *SSH and GPG keys*.
@@ -65,22 +66,22 @@ Una vez allí pulsamos en el botón situado en el lado superior derecho de la pa
 De cara a tener más claves para el futuro es una buena idea crear un archivo de configuración en el que indicar donde se encuentra cada una. 
 Para ello creamos un nuevo archivo:
 
-touch ~/.ssh/config
+**touch ~/.ssh/config**
 
 Dentro del archivo introducimos lo siguiente cambiando la ruta del apartado *IdentityFile* por la ruta de nuestra clave privada:
 
-Host github.com
-HostName github.com
-IdentityFile /Users/tuusuario/.ssh/github
-IdentitiesOnly yes
+**Host github.com**
+**HostName github.com**
+**IdentityFile /Users/tuusuario/.ssh/github**
+**IdentitiesOnly yes**
 
 Ahora cambiamos los permisos de ese archivo, ya que es posible que por defecto tenga permisos de lectura y escritura por más personas que nuestro usuario y por lo tanto nos arrojará un error en el futuro.
 
-chmod 600 /home/dsc/.ssh/config
+**chmod 600 /home/dsc/.ssh/config**
 
 Para finalizar probamos que todo ha salido bien probando a conectarnos con github haciendo lo siguiente:
 
-ssh -T git@github.com
+**ssh -T git@github.com**
 
 Para más información de los comandos utilizados en este tutorial se pueden ver los enlaces situados al final de la página.
 
