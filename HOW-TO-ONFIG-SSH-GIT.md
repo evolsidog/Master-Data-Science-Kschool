@@ -100,7 +100,7 @@ chmod 600 /home/dsc/.ssh/config
 Para finalizar probamos que todo ha salido bien probando a conectarnos con github haciendo lo siguiente:
 
 ```sh
-ssh -T git@<i></i>github.com
+ssh -T git@github.com
 ```
 
 Para más información de los comandos utilizados en este tutorial se pueden ver los enlaces situados al final de la página.
